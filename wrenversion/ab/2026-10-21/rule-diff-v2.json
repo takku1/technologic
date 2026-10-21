@@ -1,0 +1,877 @@
+{
+  "before_sha256": "69bf0a48405a903311be7aa4afeb082fa492bcd80aedeb36c11a44ad28963730",
+  "after_sha256": "c9f29548de4b1606fe0d5ec2ef8c98a9cec838a2539a311978b227e232922df7",
+  "missing": [],
+  "added": [],
+  "rules": [
+    {
+      "id": "R001",
+      "kind": "always",
+      "before": "obey project instructions and existing authorization; minimize cost per verified change",
+      "after": "obey project instructions and existing authorization; minimize cost per verified change",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R002",
+      "kind": "always",
+      "before": "prioritize scrutiny by likelihood and cost of breakage",
+      "after": "prioritize scrutiny by breakage likelihood/cost",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R003",
+      "kind": "always",
+      "before": "choose reversible defaults; report recoverable assumptions",
+      "after": "reversible defaults; report recoverable assumptions",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R004",
+      "kind": "always",
+      "before": "promote depth on new risk; explain architecture changes and their evidenced cause",
+      "after": "raise depth on new risk; explain architecture changes and evidenced causes",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R005",
+      "kind": "always",
+      "before": "new files or anchored edits in dirty trees; format only your work",
+      "after": "new files or anchored edits in dirty trees; format only your work",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R006",
+      "kind": "always",
+      "before": "temporary edits in copies or diff-verified restored snapshots",
+      "after": "temporary edits in copies or diff-verified restored snapshots",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R007",
+      "kind": "always",
+      "before": "concurrent changes are not flaky tests; never revert others",
+      "after": "concurrent changes are not flakes; never revert others",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R008",
+      "kind": "always",
+      "before": "two failed attempts per hypothesis means reinvestigate; three stalled approaches means stop and report findings and next step",
+      "after": "two failed attempts per hypothesis means reinvestigate; three stalled approaches means stop and report findings and next step",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R009",
+      "kind": "always",
+      "before": "estimate and time-box slow commands; record partial coverage",
+      "after": "estimate/time-box slow commands; record partial coverage",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R010",
+      "kind": "always",
+      "before": "surprising evidence means stop and investigate; never repeat identical failure",
+      "after": "surprising evidence means stop and investigate; never repeat identical failure",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R011",
+      "kind": "always",
+      "before": "exec records append status, output, failures, and partial coverage; stop limits also govern repairs",
+      "after": "exec appends status/output/failures/partial coverage; repairs obey stop limits",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R012",
+      "kind": "never",
+      "before": "commit, push, deploy, or publish unless requested; perform unapproved deletion, real-data migration, paid API, or credential creation",
+      "after": "commit/push/deploy/publish unless requested; unapproved deletion, real-data migration, paid API, credential creation",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R013",
+      "kind": "never",
+      "before": "test destructively against production or user data",
+      "after": "destructively test production/user data",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R014",
+      "kind": "never",
+      "before": "claim unavailable, skipped, or unreached checks passed",
+      "after": "claim unavailable, skipped, or unreached checks passed",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R015",
+      "kind": "gate",
+      "before": "require request exists",
+      "after": "require request exists",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R016",
+      "kind": "otherwise",
+      "before": "otherwise:",
+      "after": "otherwise:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R017",
+      "kind": "action",
+      "before": "abort with \"Supply a request.\"",
+      "after": "abort with \"Supply a request.\"",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R018",
+      "kind": "action",
+      "before": "read STATUS, README, CLAUDE, project instructions, then touched code from repo as context",
+      "after": "read STATUS/README/CLAUDE/project instructions, then touched code from repo as context",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R019",
+      "kind": "action",
+      "before": "generate least-invasive scope/job using {context}: finished-project build means Verify; widen only for named spec/issue/backlog from request as plan",
+      "after": "generate least-invasive scope/job using {context}: finished-project build means Verify; widen only for named spec/issue/backlog from request as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R020",
+      "kind": "branch",
+      "before": "if open mandate:",
+      "after": "if open mandate:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R021",
+      "kind": "action",
+      "before": "generate queue-ordered work from backlog, STATUS next, failing tests, TODOs; prefer locally verifiable items and explain choice from plan as plan",
+      "after": "generate backlog/STATUS-next/failing-test/TODO work in queue order; prefer locally verifiable, justify choice from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R022",
+      "kind": "branch",
+      "before": "if unapproved destructive or outward-facing actions are needed:",
+      "after": "if destructive/outward-facing actions lack approval:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R023",
+      "kind": "action",
+      "before": "show plan",
+      "after": "show plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R024",
+      "kind": "action",
+      "before": "ask user to approve destructive or outward-facing actions",
+      "after": "ask user to approve destructive or outward-facing actions",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R025",
+      "kind": "gate",
+      "before": "require confirmation",
+      "after": "require confirmation",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R026",
+      "kind": "otherwise",
+      "before": "otherwise:",
+      "after": "otherwise:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R027",
+      "kind": "action",
+      "before": "abort with \"Declined; nothing changed.\"",
+      "after": "abort with \"Declined; nothing changed.\"",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R028",
+      "kind": "branch",
+      "before": "if unresolved credentials, unavailable service, or contradictory requirements block progress:",
+      "after": "if credentials, service outage, or contradictory requirements block progress:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R029",
+      "kind": "action",
+      "before": "abort with \"Name exactly what is missing.\"",
+      "after": "abort with \"Name exactly what is missing.\"",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R030",
+      "kind": "action",
+      "before": "exec python <this-skill>/scripts/detect_project.py <project> from detector as inventory",
+      "after": "exec python <this-skill>/scripts/detect_project.py <project> from detector as inventory",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R031",
+      "kind": "action",
+      "before": "generate command plan using {plan}, {context}, and {inventory}: docs then CI then detector defaults; never guess from request as plan",
+      "after": "generate {plan} commands using {context}/{inventory}: docs then CI then detector defaults; no guesses from request as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R032",
+      "kind": "action",
+      "before": "generate coverage inventory from inventory as coverage",
+      "after": "generate coverage inventory from inventory as coverage",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R033",
+      "kind": "branch",
+      "before": "if touching shared code:",
+      "after": "if touching shared code:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R034",
+      "kind": "action",
+      "before": "generate caller/implementer/consumer search across code, config, serialization formats, and other languages; choose affected checks from plan as plan",
+      "after": "generate caller/implementer/consumer search across code/config/serialization/other languages and affected checks from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R035",
+      "kind": "branch",
+      "before": "if Fast: localized, low-risk, obvious check, job preconditions met, nearest check covers job proofs, excluding Verify:",
+      "after": "if Fast: localized, low-risk, obvious check, job preconditions met, nearest check covers job proofs, excluding Verify:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R036",
+      "kind": "action",
+      "before": "generate minimal edit from plan as change",
+      "after": "generate minimal edit from plan as change",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R037",
+      "kind": "action",
+      "before": "write change with repo",
+      "after": "write change with repo",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R038",
+      "kind": "action",
+      "before": "exec nearest relevant check from repo as evidence",
+      "after": "exec nearest relevant check from repo as evidence",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R039",
+      "kind": "returnto",
+      "before": "return to report",
+      "after": "return to report",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R040",
+      "kind": "action",
+      "before": "generate Standard one-area done criteria with evidence/unattended entry; reuse modules, stdlib, installed dependencies, then maintained packages from plan as plan",
+      "after": "generate Standard one-area done/evidence criteria and unattended entry; reuse modules/stdlib/installed deps before maintained packages from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R041",
+      "kind": "branch",
+      "before": "if cross-component, core, data, concurrency, security, migration, or public API risk:",
+      "after": "if cross-component/core/data/concurrency/security/migration/public-API risk:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R042",
+      "kind": "action",
+      "before": "generate Deep working map of entry points, connections, invariants, and files; update in notes from plan as plan",
+      "after": "generate Deep entry-point/connection/invariant/file map; maintain in notes from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R043",
+      "kind": "branch",
+      "before": "if Verify:",
+      "after": "if Verify:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R044",
+      "kind": "action",
+      "before": "exec full canonical build/tests and coverage audit without source edits from repo as evidence",
+      "after": "exec full canonical build/tests and coverage audit without source edits from repo as evidence",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R045",
+      "kind": "returnto",
+      "before": "return to run",
+      "after": "return to run",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R046",
+      "kind": "action",
+      "before": "exec existing-project baseline build/tests and record existing failures from repo as baseline",
+      "after": "exec existing-project baseline build/tests and record existing failures from repo as baseline",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R047",
+      "kind": "action",
+      "before": "generate baseline-only evidence ledger from baseline as evidence",
+      "after": "generate baseline-only evidence ledger from baseline as evidence",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R048",
+      "kind": "branch",
+      "before": "if Build:",
+      "after": "if Build:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R049",
+      "kind": "action",
+      "before": "generate ecosystem-scaffolded runnable increments matching project layout; add dependencies only when clearly better from plan as plan",
+      "after": "generate ecosystem-scaffolded runnable increments matching layout; dependencies only if clearly better from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R050",
+      "kind": "branch",
+      "before": "if Fix and cause unclear:",
+      "after": "if Fix and cause unclear:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R051",
+      "kind": "action",
+      "before": "exec discriminate two to four confidence-ranked hypotheses using cheapest logs, breakpoint, repro, or bisect from scratch as probe",
+      "after": "exec discriminate two to four confidence-ranked hypotheses using cheapest logs, breakpoint, repro, or bisect from scratch as probe",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R052",
+      "kind": "gate",
+      "before": "verify evidence confirms the originating cause from probe",
+      "after": "verify originating cause is confirmed from probe",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R053",
+      "kind": "otherwise",
+      "before": "otherwise:",
+      "after": "otherwise:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R054",
+      "kind": "action",
+      "before": "exec different probe, reinvestigating after two failed attempts; stop after three stalled approaches from scratch as probe",
+      "after": "exec different probe; reinvestigate after two failed attempts; stop after three stalled approaches from scratch as probe",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R055",
+      "kind": "retry",
+      "before": "retry",
+      "after": "retry",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R056",
+      "kind": "branch",
+      "before": "if Fix:",
+      "after": "if Fix:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R057",
+      "kind": "action",
+      "before": "exec regression test failing against the original before fixing from scratch as regression",
+      "after": "exec regression on original before fixing from scratch as regression",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R058",
+      "kind": "gate",
+      "before": "verify regression actually fails for the defect from regression",
+      "after": "verify regression fails for this defect from regression",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R059",
+      "kind": "otherwise",
+      "before": "otherwise:",
+      "after": "otherwise:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R060",
+      "kind": "action",
+      "before": "abort with \"Regression did not detect the defect; investigate.\"",
+      "after": "abort with \"Regression did not detect the defect; investigate.\"",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R061",
+      "kind": "branch",
+      "before": "if Validate or add tests:",
+      "after": "if Validate or add tests:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R062",
+      "kind": "action",
+      "before": "generate independently sourced expected values with citations and plausible-wrong-implementation challenges; record measured values from plan as plan",
+      "after": "generate cited independent expected values and plausible-wrong-implementation challenges; record measurements from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R063",
+      "kind": "branch",
+      "before": "if Speed up:",
+      "after": "if Speed up:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R064",
+      "kind": "action",
+      "before": "exec profile or benchmark representative workload from repo as measurement",
+      "after": "exec representative profile/benchmark from repo as measurement",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R065",
+      "kind": "action",
+      "before": "generate measured-hotspot-only change with identical before/after workload using {plan} from measurement as plan",
+      "after": "generate {plan} measured-hotspot-only change; identical before/after workload from measurement as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R066",
+      "kind": "branch",
+      "before": "if Upgrade or switch:",
+      "after": "if Upgrade or switch:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R067",
+      "kind": "action",
+      "before": "generate one-step-at-a-time migration from changelog breaking changes; rerun everything after each step from plan as plan",
+      "after": "generate migration from changelog breaking changes: one step, rerun everything, repeat from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R068",
+      "kind": "branch",
+      "before": "if Rename or refactor:",
+      "after": "if Rename or refactor:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R069",
+      "kind": "action",
+      "before": "generate behavior-preserving change; find references in code, strings, config, docs, CI; tests green before and after from plan as plan",
+      "after": "generate behavior-preserving change; search code/strings/config/docs/CI references; tests green before/after from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R070",
+      "kind": "branch",
+      "before": "if Clean up or remove:",
+      "after": "if Clean up or remove:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R071",
+      "kind": "action",
+      "before": "exec prove candidates unused before deletion from repo as unused",
+      "after": "exec prove candidates unused before deletion from repo as unused",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R072",
+      "kind": "action",
+      "before": "generate proven-unused-only removal using {unused}; user-written files still need approval from plan as plan",
+      "after": "generate removal limited to {unused}; user-written files need approval from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R073",
+      "kind": "branch",
+      "before": "if Secure:",
+      "after": "if Secure:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R074",
+      "kind": "action",
+      "before": "generate pinned versions, secrets absent from code/history, boundary validation, and least-privilege changes from plan as plan",
+      "after": "generate pinned versions, secrets absent from code/history, boundary validation, least privilege from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R075",
+      "kind": "branch",
+      "before": "if Extract or port:",
+      "after": "if Extract or port:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R076",
+      "kind": "action",
+      "before": "exec parity tests against old version from scratch as parity",
+      "after": "exec parity tests against old version from scratch as parity",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R077",
+      "kind": "action",
+      "before": "generate new implementation required to pass {parity} from plan as plan",
+      "after": "generate implementation that must pass {parity} from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R078",
+      "kind": "branch",
+      "before": "if Release:",
+      "after": "if Release:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R079",
+      "kind": "action",
+      "before": "generate reproducible build, version bump, and changelog; publication only if requested from plan as plan",
+      "after": "generate reproducible build/version bump/changelog; publish only if requested from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R080",
+      "kind": "branch",
+      "before": "if CI-only failure:",
+      "after": "if CI-only failure:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R081",
+      "kind": "action",
+      "before": "generate pinned versions, project-relative paths, and documented environment from plan as plan",
+      "after": "generate pinned versions/project-relative paths/documented environment from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R082",
+      "kind": "branch",
+      "before": "if flaky tests:",
+      "after": "if flaky tests:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R083",
+      "kind": "action",
+      "before": "generate isolated timing/order/state/network dependencies; no sleeps from plan as plan",
+      "after": "generate isolated timing/order/state/network dependencies; no sleeps from plan as plan",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R084",
+      "kind": "action",
+      "before": "generate small runnable increments matching project style/layout within {plan}, with regression/oracle/parity evidence from request as steps",
+      "after": "generate small runnable increments matching style/layout and {plan}, with regression/oracle/parity proof from request as steps",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R085",
+      "kind": "foreach",
+      "before": "for each steps as step:",
+      "after": "for each steps as step:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R086",
+      "kind": "action",
+      "before": "generate smallest cause-backed edit for {step}, preserving current scope and authorization from plan as change",
+      "after": "generate smallest cause-backed {step} edit within scope/authorization from plan as change",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R087",
+      "kind": "gate",
+      "before": "verify edit and commands require no new authorization from change",
+      "after": "verify edit and commands require no new authorization from change",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R088",
+      "kind": "otherwise",
+      "before": "otherwise:",
+      "after": "otherwise:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R089",
+      "kind": "action",
+      "before": "abort with \"Present concrete pending action for approval before continuing.\"",
+      "after": "abort with \"Present concrete pending action for approval before continuing.\"",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R090",
+      "kind": "action",
+      "before": "write change with repo",
+      "after": "write change with repo",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R091",
+      "kind": "action",
+      "before": "exec applicable job proofs and checks; test new tests against plausible wrong code from repo as evidence",
+      "after": "exec job proofs/checks; challenge new tests with plausible wrong code from repo as evidence",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R092",
+      "kind": "gate",
+      "before": "verify done criteria and job proofs hold without new failures versus {baseline} from evidence",
+      "after": "verify done/job proofs hold; no new failures versus {baseline} from evidence",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R093",
+      "kind": "otherwise",
+      "before": "otherwise:",
+      "after": "otherwise:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R094",
+      "kind": "action",
+      "before": "exec reinvestigate returning bugs at their origin, narrow breaking fixes with regression first; stop at attempt limits from scratch as probe",
+      "after": "exec trace recurring bugs to origin; narrow breaking fixes, regression first; obey attempt limits from scratch as probe",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R095",
+      "kind": "action",
+      "before": "generate different confirmed correction using {probe} from evidence as change",
+      "after": "generate different confirmed correction using {probe} from evidence as change",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R096",
+      "kind": "action",
+      "before": "write change with repo",
+      "after": "write change with repo",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R097",
+      "kind": "action",
+      "before": "exec applicable checks from repo as evidence",
+      "after": "exec applicable checks from repo as evidence",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R098",
+      "kind": "retry",
+      "before": "retry",
+      "after": "retry",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R099",
+      "kind": "label",
+      "before": "label run:",
+      "after": "label run:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R100",
+      "kind": "action",
+      "before": "exec highest runnable affected level with representative input: unattended CLI, smoke, health request, frame capture, or browser; inspect output; if unavailable, record why and run nearest proof from repo as runtime",
+      "after": "exec highest runnable affected level with representative input: unattended CLI/smoke/health request/frame capture/browser; inspect output; unavailable: explain and run nearest proof from repo as runtime",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R101",
+      "kind": "branch",
+      "before": "if not Verify:",
+      "after": "if not Verify:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R102",
+      "kind": "action",
+      "before": "exec relevant malformed/missing/oversized inputs, domain edges, dependency failures, repeats, limits, auth/parser/secret abuse cases; Deep integration boundaries from repo as edges",
+      "after": "exec relevant malformed/missing/oversized/domain inputs, dependency failures/repeats/limits, auth/parser/secret abuse; Deep integration boundaries from repo as edges",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R103",
+      "kind": "action",
+      "before": "generate retain valuable regressions, handle/document failures using {edges}; cut dead code, debug prints, commented blocks, unused imports/deps, scaffolding; keep useful repros/benchmarks/fixtures; update affected STATUS and usage README from plan as finish",
+      "after": "generate retain regressions and handle/document {edges}; cut dead code/debug prints/commented blocks/unused imports/deps/scaffolding; keep useful repros/benchmarks/fixtures; update affected STATUS/usage README from plan as finish",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R104",
+      "kind": "action",
+      "before": "write finish with repo",
+      "after": "write finish with repo",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R105",
+      "kind": "action",
+      "before": "exec final relevant build/tests/lint and job proofs after cleanup from repo as evidence",
+      "after": "exec final relevant build/tests/lint/job proofs after cleanup from repo as evidence",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R106",
+      "kind": "gate",
+      "before": "verify final checks introduce no failures versus recorded baseline from evidence",
+      "after": "verify final checks add no failures versus baseline from evidence",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R107",
+      "kind": "otherwise",
+      "before": "otherwise:",
+      "after": "otherwise:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R108",
+      "kind": "action",
+      "before": "generate bounded in-scope correction from evidence as finish",
+      "after": "generate bounded in-scope correction from evidence as finish",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R109",
+      "kind": "action",
+      "before": "write finish with repo",
+      "after": "write finish with repo",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R110",
+      "kind": "action",
+      "before": "exec final relevant checks from repo as evidence",
+      "after": "exec final relevant checks from repo as evidence",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R111",
+      "kind": "retry",
+      "before": "retry",
+      "after": "retry",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R112",
+      "kind": "action",
+      "before": "generate evidence ledger from {evidence} and {runtime}; compare inventory units, all changed files including pre-existing edits, flags, targets, generated code, subprojects, and ignored/skipped/gated tests against executed commands from inventory as coverage",
+      "after": "generate {evidence}/{runtime} coverage: inventory units, all changed files incl prior edits, flags/targets/generated code/subprojects/ignored/skipped/gated tests versus executed commands from inventory as coverage",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R113",
+      "kind": "label",
+      "before": "label report:",
+      "after": "label report:",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R114",
+      "kind": "action",
+      "before": "generate report using {coverage} from evidence as report",
+      "after": "generate report using {coverage} from evidence as report",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R115",
+      "kind": "action",
+      "before": "return report as report",
+      "after": "return report as report",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R116",
+      "kind": "appendix",
+      "before": "Reports use available executed evidence only.",
+      "after": "Reports use available executed evidence only.",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R117",
+      "kind": "appendix",
+      "before": "Name existing/new failures, unavailable runtime proof, assumptions, queue choice, and every unreached item; never fix unrelated baseline failures.",
+      "after": "Name existing/new failures, unavailable runtime proof, assumptions, queue choice, and every unreached item; never fix unrelated baseline failures.",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R118",
+      "kind": "appendix",
+      "before": "Cover leftovers or name them.",
+      "after": "Cover leftovers or name them.",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R119",
+      "kind": "appendix",
+      "before": "\"Done\" includes location; \"Verified\" includes results/failures; \"Optimized\" requires matched measurements; \"Remaining\" lists limits or none.",
+      "after": "\"Done\" includes location; \"Verified\" includes results/failures; \"Optimized\" requires matched measurements; \"Remaining\" lists limits or none.",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R120",
+      "kind": "appendix",
+      "before": "Use this short shape unless asked for detail.",
+      "after": "Use this short shape unless asked for detail.",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R121",
+      "kind": "appendix",
+      "before": "Compilation/type checks alone never establish runtime correctness.",
+      "after": "Compilation/type checks alone never establish runtime correctness.",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R122",
+      "kind": "appendix",
+      "before": "No measurement means no speed claim.",
+      "after": "No measurement means no speed claim.",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R123",
+      "kind": "appendix",
+      "before": "Verify proposes Fix work without editing sources.",
+      "after": "Verify proposes Fix work without editing sources.",
+      "disposition": "preserved; reviewed lexical rewrite"
+    },
+    {
+      "id": "R124",
+      "kind": "appendix",
+      "before": "Late approval suspends the pending action until an authorized user turn.",
+      "after": "Late approval suspends the pending action until an authorized user turn.",
+      "disposition": "preserved; reviewed lexical rewrite"
+    }
+  ],
+  "limit": "Structural identity plus manual semantic review, not an equivalence proof."
+}

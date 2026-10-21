@@ -1,10 +1,10 @@
 # STATUS
 
-**Current Phase:** v3.2. Field-tested twice on mote: a build/verify run (`results/2026-10-20-mote-build.md`) and an open-scope trial that became test-writing in a shared tree (`results/2026-10-20-mote-trial-v3.1.md`). Each run's findings were folded back in.
+**Current Phase:** Logic release 3.2-wren.4 is installed as the main skill. Original prose v3.2 is preserved at `docs/technologic-prose-3.2.md`. The Fix path has been tested in three isolated variants against the same frozen mote bug; see `results/2026-10-21-mote-fix-ab.md`.
 
-**Active Focus:** Test the paths no run has exercised yet: Fix with a real reproducible bug (hypothesis loop and regression test), Speed up (measure first), Clean up (behavior unchanged), Deep (working map and integration checks). A non-Rust stack is also untested.
+**Active Focus:** Speed up (measure first), Clean up (behavior unchanged), and Deep (working map and integration checks) still need field runs. A non-Rust stack is also untested. Cost and turn metrics were unavailable in the local Fix trials; the agent service hit its usage limit after code and test evidence was captured.
 
-**Architecture Summary:** TECHNologic is one Claude Code skill in `skills/technologic/`: `SKILL.md` plus a dependency-free `scripts/detect_project.py`. `SKILL.md` sets the depth (Fast/Standard/Deep), runs Understand → Execute → Prove → Finish, adjusts per job, and decides when to ask and when to act. The detector inventories a repo (stack, defined commands, CI steps, buildable units, uncommitted changes) so the skill uses the project's real commands and can check coverage. Install by copying the folder to `~/.claude/skills/`. Public at github.com/takku1/technologic.
+**Architecture Summary:** TECHNologic is a Claude Code skill in `skills/technologic/`: compact SkillWren `SKILL.md` plus a dependency-free `scripts/detect_project.py`. The logic uses existing SkillWren 0.5 syntax; the conversion inventory and prose source are archived outside the loaded instructions. `wrenversion/` holds the deterministic rebuild, reviewed coverage map, and A/B inputs. The detector inventories stack, commands, CI, buildable units, and uncommitted changes. Install by copying the folder to `~/.claude/skills/`. Public at github.com/takku1/technologic.
 
 **Key Decisions:**
 - **Tests must be shown able to fail** (v3.2, from the mote trial): a new *Validate / add tests* job requires cited reference values and a run against a wrong implementation. Also added: rules for shared or dirty trees (new files, format only your own files, no in-place temporary edits), an open-mandate rule (take work from the project's own queue), ignored/skipped tests counted as not run (the detector now lists them), time-boxing slow commands, and "the highest level your change can affect" for the real run.
@@ -14,6 +14,6 @@
 - Destructive or outward-facing actions (commits, pushes, deploys, deletions, real-data migrations, paid APIs) need approval.
 - Field-test reports go in `results/`, and each finding goes back into the skill as a general rule.
 
-**Deprecated/Legacy:** None kept. The v1 skill validator and the original brainstorm were deleted rather than archived; `SKILL.md` is the source of truth.
+**Deprecated/Legacy:** Prose v3.2 remains as provenance in `docs/technologic-prose-3.2.md`; the active source of truth is the compact logic skill. SkillWren rule inventories record a manual preservation review but do not prove semantic equivalence.
 
-**Last Updated:** 2026-10-20
+**Last Updated:** 2026-10-21

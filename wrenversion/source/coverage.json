@@ -1,0 +1,462 @@
+{
+  "original_sha256": "f65f0fd0b9476b03a9b9870a6e20d4d2eab22d991945d4b853d614bc73b05149",
+  "logic_sha256": "b2355d2e14ab1a769f4d0eefc88e20d35adb03f232590bb88373d93e17dd9006",
+  "review": "Manual line-span and control-flow inventory review for compact release 3.2-wren.4. Hashes, spans, and anchors verify bookkeeping; they do not prove semantic equivalence or model adherence.",
+  "requirements": [
+    {
+      "id": "identity-purpose",
+      "original_lines": [
+        1,
+        8
+      ],
+      "logic_contains": [
+        "Risk-adaptive software lifecycle",
+        "minimize cost per verified change",
+        "Excludes pure design discussion"
+      ]
+    },
+    {
+      "id": "authority",
+      "original_lines": [
+        10,
+        17
+      ],
+      "logic_contains": [
+        "reversible defaults; report recoverable assumptions",
+        "ask user to approve destructive or outward-facing actions",
+        "credential creation"
+      ]
+    },
+    {
+      "id": "scope-queue",
+      "original_lines": [
+        19,
+        19
+      ],
+      "logic_contains": [
+        "finished-project build means Verify; widen only for named spec/issue/backlog",
+        "prefer locally verifiable, justify choice from plan"
+      ]
+    },
+    {
+      "id": "depth",
+      "original_lines": [
+        21,
+        29
+      ],
+      "logic_contains": [
+        "raise depth on new risk",
+        "if Fast:",
+        "Standard one-area",
+        "Deep entry-point/connection/invariant/file map"
+      ]
+    },
+    {
+      "id": "job-routing",
+      "original_lines": [
+        31,
+        34
+      ],
+      "logic_contains": [
+        "if Build:",
+        "if Verify:",
+        "if Fix:",
+        "if Release:"
+      ]
+    },
+    {
+      "id": "build",
+      "original_lines": [
+        35,
+        35
+      ],
+      "logic_contains": [
+        "ecosystem-scaffolded runnable increments"
+      ]
+    },
+    {
+      "id": "verify",
+      "original_lines": [
+        36,
+        36
+      ],
+      "logic_contains": [
+        "full canonical build/tests and coverage audit without source edits",
+        "Verify proposes Fix work without editing sources"
+      ]
+    },
+    {
+      "id": "fix-regression",
+      "original_lines": [
+        37,
+        37
+      ],
+      "logic_contains": [
+        "exec regression on original before fixing",
+        "verify regression fails for this defect"
+      ]
+    },
+    {
+      "id": "test-oracles",
+      "original_lines": [
+        38,
+        38
+      ],
+      "logic_contains": [
+        "cited independent expected values and plausible-wrong-implementation challenges",
+        "record measurements",
+        "challenge new tests with plausible wrong code"
+      ]
+    },
+    {
+      "id": "performance",
+      "original_lines": [
+        39,
+        39
+      ],
+      "logic_contains": [
+        "representative profile/benchmark",
+        "identical before/after workload",
+        "No measurement means no speed claim"
+      ]
+    },
+    {
+      "id": "upgrade",
+      "original_lines": [
+        40,
+        40
+      ],
+      "logic_contains": [
+        "migration from changelog breaking changes: one step, rerun everything, repeat"
+      ]
+    },
+    {
+      "id": "refactor",
+      "original_lines": [
+        41,
+        41
+      ],
+      "logic_contains": [
+        "behavior-preserving change; search code/strings/config/docs/CI references",
+        "tests green before/after"
+      ]
+    },
+    {
+      "id": "remove",
+      "original_lines": [
+        42,
+        42
+      ],
+      "logic_contains": [
+        "prove candidates unused before deletion",
+        "user-written files need approval"
+      ]
+    },
+    {
+      "id": "secure",
+      "original_lines": [
+        43,
+        43
+      ],
+      "logic_contains": [
+        "pinned versions, secrets absent from code/history, boundary validation, least privilege"
+      ]
+    },
+    {
+      "id": "port",
+      "original_lines": [
+        44,
+        44
+      ],
+      "logic_contains": [
+        "parity tests against old version",
+        "implementation that must pass"
+      ]
+    },
+    {
+      "id": "release",
+      "original_lines": [
+        45,
+        45
+      ],
+      "logic_contains": [
+        "reproducible build/version bump/changelog",
+        "publish only if requested"
+      ]
+    },
+    {
+      "id": "project-reading-inventory",
+      "original_lines": [
+        47,
+        55
+      ],
+      "logic_contains": [
+        "read STATUS/README/CLAUDE/project instructions",
+        "docs then CI then detector defaults; no guesses"
+      ]
+    },
+    {
+      "id": "unattended-entry",
+      "original_lines": [
+        57,
+        57
+      ],
+      "logic_contains": [
+        "unattended CLI/smoke/health request/frame capture/browser"
+      ]
+    },
+    {
+      "id": "baseline",
+      "original_lines": [
+        58,
+        58
+      ],
+      "logic_contains": [
+        "existing-project baseline build/tests and record existing failures"
+      ]
+    },
+    {
+      "id": "reuse",
+      "original_lines": [
+        59,
+        59
+      ],
+      "logic_contains": [
+        "reuse modules/stdlib/installed deps before maintained packages"
+      ]
+    },
+    {
+      "id": "impact-map",
+      "original_lines": [
+        60,
+        61
+      ],
+      "logic_contains": [
+        "caller/implementer/consumer search across code/config/serialization/other languages",
+        "affected checks"
+      ]
+    },
+    {
+      "id": "done-evidence",
+      "original_lines": [
+        63,
+        65
+      ],
+      "logic_contains": [
+        "Standard one-area done/evidence criteria",
+        "Compilation/type checks alone",
+        "never establish runtime correctness"
+      ]
+    },
+    {
+      "id": "increment-layout",
+      "original_lines": [
+        67,
+        67
+      ],
+      "logic_contains": [
+        "small runnable increments matching style/layout",
+        "dependencies only if clearly better"
+      ]
+    },
+    {
+      "id": "dirty-tree",
+      "original_lines": [
+        69,
+        69
+      ],
+      "logic_contains": [
+        "new files or anchored edits in dirty trees",
+        "never revert others"
+      ]
+    },
+    {
+      "id": "investigate",
+      "original_lines": [
+        71,
+        71
+      ],
+      "logic_contains": [
+        "two to four confidence-ranked hypotheses",
+        "verify originating cause is confirmed",
+        "smallest cause-backed"
+      ]
+    },
+    {
+      "id": "architecture-scope",
+      "original_lines": [
+        73,
+        73
+      ],
+      "logic_contains": [
+        "explain architecture changes and evidenced causes",
+        "raise depth on new risk"
+      ]
+    },
+    {
+      "id": "attempt-time-limits",
+      "original_lines": [
+        75,
+        75
+      ],
+      "logic_contains": [
+        "two failed attempts per hypothesis",
+        "three stalled approaches",
+        "estimate/time-box slow commands",
+        "repairs obey stop limits"
+      ]
+    },
+    {
+      "id": "ci-environment",
+      "original_lines": [
+        77,
+        79
+      ],
+      "logic_contains": [
+        "pinned versions/project-relative paths/documented environment"
+      ]
+    },
+    {
+      "id": "flakiness",
+      "original_lines": [
+        80,
+        80
+      ],
+      "logic_contains": [
+        "isolated timing/order/state/network dependencies",
+        "no sleeps"
+      ]
+    },
+    {
+      "id": "breaking-fix",
+      "original_lines": [
+        81,
+        81
+      ],
+      "logic_contains": [
+        "narrow breaking fixes, regression first"
+      ]
+    },
+    {
+      "id": "recurring-bug",
+      "original_lines": [
+        82,
+        82
+      ],
+      "logic_contains": [
+        "trace recurring bugs to origin"
+      ]
+    },
+    {
+      "id": "risk-weighted-proof",
+      "original_lines": [
+        84,
+        86
+      ],
+      "logic_contains": [
+        "prioritize scrutiny by breakage likelihood/cost"
+      ]
+    },
+    {
+      "id": "real-runtime-proof",
+      "original_lines": [
+        88,
+        88
+      ],
+      "logic_contains": [
+        "highest runnable affected level with representative input",
+        "unavailable: explain and run nearest proof"
+      ]
+    },
+    {
+      "id": "edge-integration-proof",
+      "original_lines": [
+        90,
+        90
+      ],
+      "logic_contains": [
+        "malformed/missing/oversized/domain inputs",
+        "auth/parser/secret abuse",
+        "Deep integration boundaries",
+        "destructively test production/user data"
+      ]
+    },
+    {
+      "id": "coverage-accounting",
+      "original_lines": [
+        92,
+        92
+      ],
+      "logic_contains": [
+        "all changed files incl prior edits",
+        "flags/targets/generated code/subprojects/ignored/skipped/gated tests",
+        "Cover leftovers"
+      ]
+    },
+    {
+      "id": "surprising-evidence",
+      "original_lines": [
+        94,
+        94
+      ],
+      "logic_contains": [
+        "surprising evidence means stop and investigate"
+      ]
+    },
+    {
+      "id": "finish-cleanup",
+      "original_lines": [
+        96,
+        98
+      ],
+      "logic_contains": [
+        "cut dead code/debug prints/commented blocks/unused imports/deps/scaffolding",
+        "final relevant build/tests/lint/job proofs after cleanup"
+      ]
+    },
+    {
+      "id": "final-baseline",
+      "original_lines": [
+        99,
+        99
+      ],
+      "logic_contains": [
+        "final checks add no failures versus baseline"
+      ]
+    },
+    {
+      "id": "affected-docs",
+      "original_lines": [
+        100,
+        100
+      ],
+      "logic_contains": [
+        "update affected STATUS/usage README"
+      ]
+    },
+    {
+      "id": "publication-authority",
+      "original_lines": [
+        101,
+        101
+      ],
+      "logic_contains": [
+        "commit/push/deploy/publish unless requested"
+      ]
+    },
+    {
+      "id": "report",
+      "original_lines": [
+        103,
+        110
+      ],
+      "logic_contains": [
+        "Done",
+        "Verified",
+        "Optimized",
+        "Remaining",
+        "short shape unless asked for detail"
+      ]
+    }
+  ]
+}

@@ -6,15 +6,17 @@ A [Claude Code](https://claude.com/claude-code) skill that takes a rough idea, s
 
 It covers building, fixing, speeding up, upgrading, refactoring and renaming, cleanup, hardening, porting, and releasing. It is not for design discussion, explaining code, or one-line edits.
 
-## Status: one more time, with feeling
+## Status: logic release 3.2-wren.4
 
-The build path is proven. The other four need breaking.
+The main skill is now the compact SkillWren conversion of prose v3.2.
+Three isolated Fix trials on the same frozen mote snapshot covered the
+prose, routing/impact-fixed, and compressed variants.
 
 | Path | Status |
 |---|---|
 | **Build / verify** an existing project | Field-tested on a Rust/Cargo workspace ([report](results/2026-10-20-mote-build.md)). Every finding from that run has been folded back into the skill. |
 | **Validate / add tests** (*prove it*: cited reference values, every new test shown able to fail) | Field-tested on the same workspace, in a tree the user was editing ([report](results/2026-10-20-mote-trial-v3.1.md)). Findings folded back in v3.2. |
-| **Fix** a bug (*break it, fix it*: hypothesis loop, the regression test must fail before the fix) | Not yet run |
+| **Fix** a bug (*break it, fix it*: hypothesis loop, the regression test must fail before the fix) | Field-tested on a real longitude-wrap defect; all three variants added passing regressions and passed mote-core (191 passed, 2 ignored). [A/B report](results/2026-10-21-mote-fix-ab.md) |
 | **Speed up** (*faster*, but only when measured: before/after on the same workload) | Not yet run |
 | **Clean up / refactor** (*cut it, rename it*: behavior must not change) | Not yet run |
 | **Deep** (all *around the world*: cross-component work, a working map, integration checks) | Not yet run |

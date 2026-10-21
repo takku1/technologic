@@ -1,0 +1,9 @@
+snapshot/
+runs/
+target*/
+config/
+raw/
+*.exe
+*.pdb
+fixed-result.json
+fixed.patch

@@ -1,0 +1,1204 @@
+{
+  "sha256": "69bf0a48405a903311be7aa4afeb082fa492bcd80aedeb36c11a44ad28963730",
+  "rules": [
+    {
+      "kind": "always",
+      "line": 44,
+      "text": "obey project instructions and existing authorization; minimize cost per verified change",
+      "id": "R001"
+    },
+    {
+      "kind": "always",
+      "line": 45,
+      "text": "prioritize scrutiny by likelihood and cost of breakage",
+      "id": "R002"
+    },
+    {
+      "kind": "always",
+      "line": 46,
+      "text": "choose reversible defaults; report recoverable assumptions",
+      "id": "R003"
+    },
+    {
+      "kind": "always",
+      "line": 47,
+      "text": "promote depth on new risk; explain architecture changes and their evidenced cause",
+      "id": "R004"
+    },
+    {
+      "kind": "always",
+      "line": 48,
+      "text": "new files or anchored edits in dirty trees; format only your work",
+      "id": "R005"
+    },
+    {
+      "kind": "always",
+      "line": 49,
+      "text": "temporary edits in copies or diff-verified restored snapshots",
+      "id": "R006"
+    },
+    {
+      "kind": "always",
+      "line": 50,
+      "text": "concurrent changes are not flaky tests; never revert others",
+      "id": "R007"
+    },
+    {
+      "kind": "always",
+      "line": 51,
+      "text": "two failed attempts per hypothesis means reinvestigate; three stalled approaches means stop and report findings and next step",
+      "id": "R008"
+    },
+    {
+      "kind": "always",
+      "line": 52,
+      "text": "estimate and time-box slow commands; record partial coverage",
+      "id": "R009"
+    },
+    {
+      "kind": "always",
+      "line": 53,
+      "text": "surprising evidence means stop and investigate; never repeat identical failure",
+      "id": "R010"
+    },
+    {
+      "kind": "always",
+      "line": 54,
+      "text": "exec records append status, output, failures, and partial coverage; stop limits also govern repairs",
+      "id": "R011"
+    },
+    {
+      "kind": "never",
+      "line": 56,
+      "text": "commit, push, deploy, or publish unless requested; perform unapproved deletion, real-data migration, paid API, or credential creation",
+      "id": "R012"
+    },
+    {
+      "kind": "never",
+      "line": 57,
+      "text": "test destructively against production or user data",
+      "id": "R013"
+    },
+    {
+      "kind": "never",
+      "line": 58,
+      "text": "claim unavailable, skipped, or unreached checks passed",
+      "id": "R014"
+    },
+    {
+      "kind": "gate",
+      "verb": "require",
+      "parents": [],
+      "flow": "deliver",
+      "line": 63,
+      "text": "require request exists",
+      "id": "R015"
+    },
+    {
+      "kind": "otherwise",
+      "verb": null,
+      "parents": [
+        "gate"
+      ],
+      "flow": "deliver",
+      "line": 64,
+      "text": "otherwise:",
+      "id": "R016"
+    },
+    {
+      "kind": "action",
+      "verb": "abort",
+      "parents": [
+        "otherwise",
+        "gate"
+      ],
+      "flow": "deliver",
+      "line": 65,
+      "text": "abort with \"Supply a request.\"",
+      "id": "R017"
+    },
+    {
+      "kind": "action",
+      "verb": "read",
+      "parents": [],
+      "flow": "deliver",
+      "line": 66,
+      "text": "read STATUS, README, CLAUDE, project instructions, then touched code from repo as context",
+      "id": "R018"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [],
+      "flow": "deliver",
+      "line": 67,
+      "text": "generate least-invasive scope/job using {context}: finished-project build means Verify; widen only for named spec/issue/backlog from request as plan",
+      "id": "R019"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 68,
+      "text": "if open mandate:",
+      "id": "R020"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 69,
+      "text": "generate queue-ordered work from backlog, STATUS next, failing tests, TODOs; prefer locally verifiable items and explain choice from plan as plan",
+      "id": "R021"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 70,
+      "text": "if unapproved destructive or outward-facing actions are needed:",
+      "id": "R022"
+    },
+    {
+      "kind": "action",
+      "verb": "show",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 71,
+      "text": "show plan",
+      "id": "R023"
+    },
+    {
+      "kind": "action",
+      "verb": "ask",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 72,
+      "text": "ask user to approve destructive or outward-facing actions",
+      "id": "R024"
+    },
+    {
+      "kind": "gate",
+      "verb": "require",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 73,
+      "text": "require confirmation",
+      "id": "R025"
+    },
+    {
+      "kind": "otherwise",
+      "verb": null,
+      "parents": [
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 74,
+      "text": "otherwise:",
+      "id": "R026"
+    },
+    {
+      "kind": "action",
+      "verb": "abort",
+      "parents": [
+        "otherwise",
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 75,
+      "text": "abort with \"Declined; nothing changed.\"",
+      "id": "R027"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 76,
+      "text": "if unresolved credentials, unavailable service, or contradictory requirements block progress:",
+      "id": "R028"
+    },
+    {
+      "kind": "action",
+      "verb": "abort",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 77,
+      "text": "abort with \"Name exactly what is missing.\"",
+      "id": "R029"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [],
+      "flow": "deliver",
+      "line": 78,
+      "text": "exec python <this-skill>/scripts/detect_project.py <project> from detector as inventory",
+      "id": "R030"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [],
+      "flow": "deliver",
+      "line": 79,
+      "text": "generate command plan using {plan}, {context}, and {inventory}: docs then CI then detector defaults; never guess from request as plan",
+      "id": "R031"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [],
+      "flow": "deliver",
+      "line": 80,
+      "text": "generate coverage inventory from inventory as coverage",
+      "id": "R032"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 81,
+      "text": "if touching shared code:",
+      "id": "R033"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 82,
+      "text": "generate caller/implementer/consumer search across code, config, serialization formats, and other languages; choose affected checks from plan as plan",
+      "id": "R034"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 83,
+      "text": "if Fast: localized, low-risk, obvious check, job preconditions met, nearest check covers job proofs, excluding Verify:",
+      "id": "R035"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 84,
+      "text": "generate minimal edit from plan as change",
+      "id": "R036"
+    },
+    {
+      "kind": "action",
+      "verb": "write",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 85,
+      "text": "write change with repo",
+      "id": "R037"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 86,
+      "text": "exec nearest relevant check from repo as evidence",
+      "id": "R038"
+    },
+    {
+      "kind": "returnto",
+      "verb": "report",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 87,
+      "text": "return to report",
+      "id": "R039"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [],
+      "flow": "deliver",
+      "line": 88,
+      "text": "generate Standard one-area done criteria with evidence/unattended entry; reuse modules, stdlib, installed dependencies, then maintained packages from plan as plan",
+      "id": "R040"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 89,
+      "text": "if cross-component, core, data, concurrency, security, migration, or public API risk:",
+      "id": "R041"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 90,
+      "text": "generate Deep working map of entry points, connections, invariants, and files; update in notes from plan as plan",
+      "id": "R042"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 91,
+      "text": "if Verify:",
+      "id": "R043"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 92,
+      "text": "exec full canonical build/tests and coverage audit without source edits from repo as evidence",
+      "id": "R044"
+    },
+    {
+      "kind": "returnto",
+      "verb": "run",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 93,
+      "text": "return to run",
+      "id": "R045"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [],
+      "flow": "deliver",
+      "line": 94,
+      "text": "exec existing-project baseline build/tests and record existing failures from repo as baseline",
+      "id": "R046"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [],
+      "flow": "deliver",
+      "line": 95,
+      "text": "generate baseline-only evidence ledger from baseline as evidence",
+      "id": "R047"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 96,
+      "text": "if Build:",
+      "id": "R048"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 97,
+      "text": "generate ecosystem-scaffolded runnable increments matching project layout; add dependencies only when clearly better from plan as plan",
+      "id": "R049"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 98,
+      "text": "if Fix and cause unclear:",
+      "id": "R050"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 99,
+      "text": "exec discriminate two to four confidence-ranked hypotheses using cheapest logs, breakpoint, repro, or bisect from scratch as probe",
+      "id": "R051"
+    },
+    {
+      "kind": "gate",
+      "verb": "verify",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 100,
+      "text": "verify evidence confirms the originating cause from probe",
+      "id": "R052"
+    },
+    {
+      "kind": "otherwise",
+      "verb": null,
+      "parents": [
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 101,
+      "text": "otherwise:",
+      "id": "R053"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "otherwise",
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 102,
+      "text": "exec different probe, reinvestigating after two failed attempts; stop after three stalled approaches from scratch as probe",
+      "id": "R054"
+    },
+    {
+      "kind": "retry",
+      "verb": null,
+      "parents": [
+        "otherwise",
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 103,
+      "text": "retry",
+      "id": "R055"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 104,
+      "text": "if Fix:",
+      "id": "R056"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 105,
+      "text": "exec regression test failing against the original before fixing from scratch as regression",
+      "id": "R057"
+    },
+    {
+      "kind": "gate",
+      "verb": "verify",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 106,
+      "text": "verify regression actually fails for the defect from regression",
+      "id": "R058"
+    },
+    {
+      "kind": "otherwise",
+      "verb": null,
+      "parents": [
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 107,
+      "text": "otherwise:",
+      "id": "R059"
+    },
+    {
+      "kind": "action",
+      "verb": "abort",
+      "parents": [
+        "otherwise",
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 108,
+      "text": "abort with \"Regression did not detect the defect; investigate.\"",
+      "id": "R060"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 109,
+      "text": "if Validate or add tests:",
+      "id": "R061"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 110,
+      "text": "generate independently sourced expected values with citations and plausible-wrong-implementation challenges; record measured values from plan as plan",
+      "id": "R062"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 111,
+      "text": "if Speed up:",
+      "id": "R063"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 112,
+      "text": "exec profile or benchmark representative workload from repo as measurement",
+      "id": "R064"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 113,
+      "text": "generate measured-hotspot-only change with identical before/after workload using {plan} from measurement as plan",
+      "id": "R065"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 114,
+      "text": "if Upgrade or switch:",
+      "id": "R066"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 115,
+      "text": "generate one-step-at-a-time migration from changelog breaking changes; rerun everything after each step from plan as plan",
+      "id": "R067"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 116,
+      "text": "if Rename or refactor:",
+      "id": "R068"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 117,
+      "text": "generate behavior-preserving change; find references in code, strings, config, docs, CI; tests green before and after from plan as plan",
+      "id": "R069"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 118,
+      "text": "if Clean up or remove:",
+      "id": "R070"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 119,
+      "text": "exec prove candidates unused before deletion from repo as unused",
+      "id": "R071"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 120,
+      "text": "generate proven-unused-only removal using {unused}; user-written files still need approval from plan as plan",
+      "id": "R072"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 121,
+      "text": "if Secure:",
+      "id": "R073"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 122,
+      "text": "generate pinned versions, secrets absent from code/history, boundary validation, and least-privilege changes from plan as plan",
+      "id": "R074"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 123,
+      "text": "if Extract or port:",
+      "id": "R075"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 124,
+      "text": "exec parity tests against old version from scratch as parity",
+      "id": "R076"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 125,
+      "text": "generate new implementation required to pass {parity} from plan as plan",
+      "id": "R077"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 126,
+      "text": "if Release:",
+      "id": "R078"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 127,
+      "text": "generate reproducible build, version bump, and changelog; publication only if requested from plan as plan",
+      "id": "R079"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 128,
+      "text": "if CI-only failure:",
+      "id": "R080"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 129,
+      "text": "generate pinned versions, project-relative paths, and documented environment from plan as plan",
+      "id": "R081"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 130,
+      "text": "if flaky tests:",
+      "id": "R082"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 131,
+      "text": "generate isolated timing/order/state/network dependencies; no sleeps from plan as plan",
+      "id": "R083"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [],
+      "flow": "deliver",
+      "line": 132,
+      "text": "generate small runnable increments matching project style/layout within {plan}, with regression/oracle/parity evidence from request as steps",
+      "id": "R084"
+    },
+    {
+      "kind": "foreach",
+      "verb": null,
+      "parents": [],
+      "flow": "deliver",
+      "line": 133,
+      "text": "for each steps as step:",
+      "id": "R085"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 134,
+      "text": "generate smallest cause-backed edit for {step}, preserving current scope and authorization from plan as change",
+      "id": "R086"
+    },
+    {
+      "kind": "gate",
+      "verb": "verify",
+      "parents": [
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 135,
+      "text": "verify edit and commands require no new authorization from change",
+      "id": "R087"
+    },
+    {
+      "kind": "otherwise",
+      "verb": null,
+      "parents": [
+        "gate",
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 136,
+      "text": "otherwise:",
+      "id": "R088"
+    },
+    {
+      "kind": "action",
+      "verb": "abort",
+      "parents": [
+        "otherwise",
+        "gate",
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 137,
+      "text": "abort with \"Present concrete pending action for approval before continuing.\"",
+      "id": "R089"
+    },
+    {
+      "kind": "action",
+      "verb": "write",
+      "parents": [
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 138,
+      "text": "write change with repo",
+      "id": "R090"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 139,
+      "text": "exec applicable job proofs and checks; test new tests against plausible wrong code from repo as evidence",
+      "id": "R091"
+    },
+    {
+      "kind": "gate",
+      "verb": "verify",
+      "parents": [
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 140,
+      "text": "verify done criteria and job proofs hold without new failures versus {baseline} from evidence",
+      "id": "R092"
+    },
+    {
+      "kind": "otherwise",
+      "verb": null,
+      "parents": [
+        "gate",
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 141,
+      "text": "otherwise:",
+      "id": "R093"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "otherwise",
+        "gate",
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 142,
+      "text": "exec reinvestigate returning bugs at their origin, narrow breaking fixes with regression first; stop at attempt limits from scratch as probe",
+      "id": "R094"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "otherwise",
+        "gate",
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 143,
+      "text": "generate different confirmed correction using {probe} from evidence as change",
+      "id": "R095"
+    },
+    {
+      "kind": "action",
+      "verb": "write",
+      "parents": [
+        "otherwise",
+        "gate",
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 144,
+      "text": "write change with repo",
+      "id": "R096"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "otherwise",
+        "gate",
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 145,
+      "text": "exec applicable checks from repo as evidence",
+      "id": "R097"
+    },
+    {
+      "kind": "retry",
+      "verb": null,
+      "parents": [
+        "otherwise",
+        "gate",
+        "foreach"
+      ],
+      "flow": "deliver",
+      "line": 146,
+      "text": "retry",
+      "id": "R098"
+    },
+    {
+      "kind": "label",
+      "verb": "run",
+      "parents": [],
+      "flow": "deliver",
+      "line": 147,
+      "text": "label run:",
+      "id": "R099"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [],
+      "flow": "deliver",
+      "line": 148,
+      "text": "exec highest runnable affected level with representative input: unattended CLI, smoke, health request, frame capture, or browser; inspect output; if unavailable, record why and run nearest proof from repo as runtime",
+      "id": "R100"
+    },
+    {
+      "kind": "branch",
+      "verb": "if",
+      "parents": [],
+      "flow": "deliver",
+      "line": 149,
+      "text": "if not Verify:",
+      "id": "R101"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 150,
+      "text": "exec relevant malformed/missing/oversized inputs, domain edges, dependency failures, repeats, limits, auth/parser/secret abuse cases; Deep integration boundaries from repo as edges",
+      "id": "R102"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 151,
+      "text": "generate retain valuable regressions, handle/document failures using {edges}; cut dead code, debug prints, commented blocks, unused imports/deps, scaffolding; keep useful repros/benchmarks/fixtures; update affected STATUS and usage README from plan as finish",
+      "id": "R103"
+    },
+    {
+      "kind": "action",
+      "verb": "write",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 152,
+      "text": "write finish with repo",
+      "id": "R104"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 153,
+      "text": "exec final relevant build/tests/lint and job proofs after cleanup from repo as evidence",
+      "id": "R105"
+    },
+    {
+      "kind": "gate",
+      "verb": "verify",
+      "parents": [
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 154,
+      "text": "verify final checks introduce no failures versus recorded baseline from evidence",
+      "id": "R106"
+    },
+    {
+      "kind": "otherwise",
+      "verb": null,
+      "parents": [
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 155,
+      "text": "otherwise:",
+      "id": "R107"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [
+        "otherwise",
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 156,
+      "text": "generate bounded in-scope correction from evidence as finish",
+      "id": "R108"
+    },
+    {
+      "kind": "action",
+      "verb": "write",
+      "parents": [
+        "otherwise",
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 157,
+      "text": "write finish with repo",
+      "id": "R109"
+    },
+    {
+      "kind": "action",
+      "verb": "exec",
+      "parents": [
+        "otherwise",
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 158,
+      "text": "exec final relevant checks from repo as evidence",
+      "id": "R110"
+    },
+    {
+      "kind": "retry",
+      "verb": null,
+      "parents": [
+        "otherwise",
+        "gate",
+        "branch"
+      ],
+      "flow": "deliver",
+      "line": 159,
+      "text": "retry",
+      "id": "R111"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [],
+      "flow": "deliver",
+      "line": 160,
+      "text": "generate evidence ledger from {evidence} and {runtime}; compare inventory units, all changed files including pre-existing edits, flags, targets, generated code, subprojects, and ignored/skipped/gated tests against executed commands from inventory as coverage",
+      "id": "R112"
+    },
+    {
+      "kind": "label",
+      "verb": "report",
+      "parents": [],
+      "flow": "deliver",
+      "line": 161,
+      "text": "label report:",
+      "id": "R113"
+    },
+    {
+      "kind": "action",
+      "verb": "generate",
+      "parents": [],
+      "flow": "deliver",
+      "line": 162,
+      "text": "generate report using {coverage} from evidence as report",
+      "id": "R114"
+    },
+    {
+      "kind": "action",
+      "verb": "return",
+      "parents": [],
+      "flow": "deliver",
+      "line": 163,
+      "text": "return report as report",
+      "id": "R115"
+    },
+    {
+      "kind": "appendix",
+      "text": "Reports use available executed evidence only.",
+      "id": "R116"
+    },
+    {
+      "kind": "appendix",
+      "text": "Name existing/new failures, unavailable runtime proof, assumptions, queue choice, and every unreached item; never fix unrelated baseline failures.",
+      "id": "R117"
+    },
+    {
+      "kind": "appendix",
+      "text": "Cover leftovers or name them.",
+      "id": "R118"
+    },
+    {
+      "kind": "appendix",
+      "text": "\"Done\" includes location; \"Verified\" includes results/failures; \"Optimized\" requires matched measurements; \"Remaining\" lists limits or none.",
+      "id": "R119"
+    },
+    {
+      "kind": "appendix",
+      "text": "Use this short shape unless asked for detail.",
+      "id": "R120"
+    },
+    {
+      "kind": "appendix",
+      "text": "Compilation/type checks alone never establish runtime correctness.",
+      "id": "R121"
+    },
+    {
+      "kind": "appendix",
+      "text": "No measurement means no speed claim.",
+      "id": "R122"
+    },
+    {
+      "kind": "appendix",
+      "text": "Verify proposes Fix work without editing sources.",
+      "id": "R123"
+    },
+    {
+      "kind": "appendix",
+      "text": "Late approval suspends the pending action until an authorized user turn.",
+      "id": "R124"
+    }
+  ]
+}
