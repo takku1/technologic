@@ -63,7 +63,7 @@ It prints the stack, the commands the project defines, what CI runs, every build
 - **Understand:** read the project's docs, detect the stack, take a baseline (build and test before touching anything), look for reuse, check what the change impacts.
 - **Execute:** define "done" as evidence, build in runnable increments, test hypotheses before fixing, stay in scope, stop after repeated failed attempts.
 - **Prove:** run the real program at the highest level that works unattended, try to break it, and check **coverage**: every buildable unit and changed file is either covered by something that ran or named as unverified.
-- **Finish:** cut scaffolding, run everything again, update docs, and give a four-line report.
+- **Finish:** cut scaffolding, run everything again, update docs, and give a short report.
 
 The full instructions are in [`skills/technologic/SKILL.md`](skills/technologic/SKILL.md). Current state and design decisions are in [`docs/STATUS.md`](docs/STATUS.md).
 

@@ -35,7 +35,7 @@ Classify the task before starting — by how much it touches and what breaks if 
 | Job | What matters most |
 |---|---|
 | **Build** something new | Standard scaffolder, small runnable increments, define done before coding. |
-| **Verify** an existing project | Full coverage (below), then the real run. Change nothing; anything broken becomes a Fix. |
+| **Verify** an existing project | Build and test everything, check coverage, then the real run. Change nothing; anything broken becomes a Fix. |
 | **Fix** a bug | Investigate (below) before editing; add a regression test that fails before the fix and passes after. |
 | **Speed up** | Measure first with a profiler or benchmark; change the measured hotspot; report before/after numbers on the same workload. No measurement, no optimization claim. |
 | **Upgrade / update / switch** (deps, runtime, framework) | One change at a time; read the changelog for breaking changes; rerun everything after each step. |
@@ -54,8 +54,6 @@ python <this-skill>/scripts/detect_project.py [project-dir]
 ```
 
 It prints the stack, the commands the project defines, what CI runs, every buildable unit on disk, and where uncommitted changes are. Treat it as leads, not truth. Pick canonical commands in this order: the project's docs (often `CLAUDE.md`), then CI (CI is what the project actually trusts), then the stack defaults it prints. Never pick a guess.
-
-**Coverage:** a result only covers what the commands actually reached. Before you claim anything, match **what exists** (the buildable units, and the changed files, yours and any already uncommitted) against **what you ran**. Workspace defaults, feature flags, platform targets, generated code and separate sub-projects all quietly narrow what a command reaches. Anything left over is either brought into scope or named under **Remaining**. This one check covers every ecosystem's version of "the build skipped part of the code".
 
 **Find the unattended run:** look for how the program can run without a person driving it: a CLI flag, a headless, script, or smoke mode, screenshot or frame capture, `--dry-run`, a health endpoint, or an example in the README, tests or CI. That becomes the main proof under *Run it*.
 
@@ -100,6 +98,8 @@ Weight verification by risk: the parts most likely to break, and most costly if 
 
 **Break it** — probe past the happy path where relevant: missing, malformed, or oversized input; domain edge cases; dependency failure; repeated execution; resource limits; for auth, parsing, or secrets, the obvious abuse cases. For Deep changes, exercise the **integration boundaries** — the places your change meets other components, processes, or services — not just unit tests of the new code. Add tests for cases that matter so they stay fixed. Never test destructively against production systems or the user's real data.
 
+**Check coverage** — a result only covers what the commands actually reached. Before you claim anything, match **what exists** (the buildable units, and the changed files, yours and any already uncommitted) against **what you ran**. Workspace defaults, feature flags, platform targets, generated code and separate sub-projects all quietly narrow what a command reaches. Anything left over is either brought into scope or named under **Remaining**. This one check covers every ecosystem's version of "the build skipped part of the code".
+
 **Escalate on surprise.** When evidence contradicts what you expected — a test passes that should fail, a number moves the wrong way — stop and understand why before continuing. A surprise means your model of the system is wrong somewhere.
 
 ## Finish
@@ -112,7 +112,7 @@ Weight verification by risk: the parts most likely to break, and most costly if 
 Report in this shape, nothing longer unless asked:
 
 ```
-**Built:** <what, and where it lives>
+**Done:** <what was built, fixed, or checked, and where it lives>
 **Verified:** <what was run and the result; what failed>
 **Optimized:** <measured improvements>
 **Remaining:** <open limitations, unverified items, or "none">
@@ -125,7 +125,6 @@ Leave out **Optimized** if there was no performance work.
 - Every deliverable has evidence behind it, at the depth the risk called for.
 - The real build and tests pass, or failures are reported with output — and none are new relative to the baseline.
 - Problems that were already there (failing tests, warnings, code nothing builds) are reported, not fixed, unless they're in scope. Your change adds none.
-- Every claim covers what it says it covers: nothing exists, and nothing changed, that went unchecked without being named.
 - Known failure cases are handled or documented.
 - No leftover scaffolding, debug code, or unneeded complexity.
-- Anything you couldn't verify is listed under **Remaining** as unverified — never reported as passing.
+- Anything you couldn't verify or reach is listed under **Remaining** as unverified — never reported as passing.

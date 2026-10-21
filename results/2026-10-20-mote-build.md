@@ -1,5 +1,7 @@
 # TECHNologic field test: "build mote"
 
+> **Resolved in v3.1.** The fixes below were made general instead of case by case. Findings 1–2 became the *coverage* rule plus the detector's inventory of buildable units, CI commands and uncommitted changes. Finding 3 became the "least invasive reading" rule. Finding 5 became "find the unattended run". Findings 4 and 6 went in as suggested. See `docs/STATUS.md`.
+
 - **Date:** 2026-10-20
 - **Invocation:** `/technologic build mote`
 - **Target:** `Z:\voxelgame`, a Rust Cargo workspace (mote-core, mote-render, mote-game) that is a procedural planet game.
