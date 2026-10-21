@@ -28,6 +28,10 @@ MANIFESTS = ("Cargo.toml", "package.json", "pyproject.toml", "setup.py", "go.mod
              "build.gradle", "build.gradle.kts", "CMakeLists.txt", "Makefile", "meson.build",
              "*.csproj", "*.fsproj", "Package.swift", "mix.exs", "Gemfile", "composer.json", "pubspec.yaml")
 SKIP_DIRS = {"target", "node_modules", "dist", "build", "out", "vendor", "venv", "__pycache__"}
+# Markers for tests that exist but don't run by default.
+SKIP_MARKS = re.compile(r"#\[ignore\b|@pytest\.mark\.(?:skip|xfail)|@unittest\.skip|\b(?:it|test|describe)\.skip\(|"
+                        r"\bx(?:it|describe)\(|\bt\.Skip\(|@Disabled\b|\[Ignore\]|\[Fact\(Skip|\[Theory\(Skip")
+SOURCE_EXTS = {".rs", ".py", ".js", ".jsx", ".ts", ".tsx", ".mjs", ".go", ".java", ".kt", ".cs", ".fs"}
 
 
 def load_toml(path):
@@ -148,6 +152,27 @@ def inventory(root, depth=3):
     return found
 
 
+def skipped_tests(root, max_files=20000):
+    """Files containing ignored/skipped-test markers, with counts."""
+    found, seen, stack = Counter(), 0, [root]
+    while stack and seen < max_files:
+        d = stack.pop()
+        stack += subdirs(d)
+        try:
+            files = [f for f in d.iterdir() if f.suffix in SOURCE_EXTS and is_file(f)]
+        except OSError:
+            continue
+        for f in files:
+            seen += 1
+            try:
+                n = len(SKIP_MARKS.findall(f.read_text(encoding="utf-8", errors="ignore")))
+            except OSError:
+                continue
+            if n:
+                found[f.relative_to(root).as_posix()] = n
+    return found
+
+
 def dirty(root):
     """Uncommitted paths, grouped two levels deep."""
     try:
@@ -189,6 +214,10 @@ def main(argv):
         print("\n".join(f"  {u}" for u in units[:40]))
         if len(units) > 40:
             print(f"  ... {len(units) - 40} more (often vendored or reference code; decide what's in scope)")
+    skipped = skipped_tests(root)
+    if skipped:
+        print(f"\nignored/skipped tests: {sum(skipped.values())} markers (these don't run by default; run or name them):")
+        print("\n".join(f"  {n:4} {f}" for f, n in skipped.most_common(15)))
     changes = dirty(root)
     if changes is None:
         print("\ngit: no")

@@ -13,12 +13,13 @@ The build path is proven. The other four need breaking.
 | Path | Status |
 |---|---|
 | **Build / verify** an existing project | Field-tested on a Rust/Cargo workspace ([report](results/2026-10-20-mote-build.md)). Every finding from that run has been folded back into the skill. |
+| **Validate / add tests** (*prove it*: cited reference values, every new test shown able to fail) | Field-tested on the same workspace, in a tree the user was editing ([report](results/2026-10-20-mote-trial-v3.1.md)). Findings folded back in v3.2. |
 | **Fix** a bug (*break it, fix it*: hypothesis loop, the regression test must fail before the fix) | Not yet run |
 | **Speed up** (*faster*, but only when measured: before/after on the same workload) | Not yet run |
 | **Clean up / refactor** (*cut it, rename it*: behavior must not change) | Not yet run |
 | **Deep** (all *around the world*: cross-component work, a working map, integration checks) | Not yet run |
 
-The only field test so far is Rust. `detect_project.py` also claims to handle npm/pnpm/yarn, Python (uv/poetry/pip), Go, .NET, Maven/Gradle, CMake and Make/just, but those haven't had a real run yet. A run on any of them, especially one of the untested paths, is the most useful thing you can contribute.
+Both field tests so far are Rust. `detect_project.py` also claims to handle npm/pnpm/yarn, Python (uv/poetry/pip), Go, .NET, Maven/Gradle, CMake and Make/just, but those haven't had a real run yet. A run on any of them, especially one of the untested paths, is the most useful thing you can contribute.
 
 ## Plug it, play it (install)
 
