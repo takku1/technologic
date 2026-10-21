@@ -83,6 +83,10 @@ results/              field-test reports
 docs/STATUS.md        current phase, decisions, what's deprecated
 ```
 
+## License
+
+[MIT](LICENSE). Use it, fork it, break it, fix it. Field tests and PRs welcome.
+
 ---
 
 *Robots write the code. Every claim still needs evidence: human after all.*
